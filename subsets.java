@@ -8,6 +8,25 @@ class Solution {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         List<Integer> subset = new ArrayList<Integer>();
         recursion(res, subset, nums, 0);
+        // new Comparator<ArrayList<Integer>> () {
+        //     @Override
+        //     public int compare(ArrayList<Integer> a, ArrayList<Integer> b) {
+        //         for(int i = 0; i<a.size() && i< b.size(); i++){
+        //           //  if(a.get(i) < b.get(i) )
+        //             if(a.get(i).compareTo(b.get(i))  == 0){
+        //                 continue;
+        //             }
+        //             return a.get(i).compareTo(b.get(i));
+        //         }
+        //         if(a.size() > b.size())
+        //             return 1;
+        //         else
+        //             if(a.size() == b.size())
+        //                 return 0;
+        //             else
+        //                 return -1;
+        //     }
+        // };
         return res;
     }
     
