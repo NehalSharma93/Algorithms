@@ -8,6 +8,8 @@ class Solution {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         List<Integer> subset = new ArrayList<Integer>();
         recursion(res, subset, nums, 0);
+        
+        //This sorting can be used to get output which lexicographycially in order
         // new Comparator<ArrayList<Integer>> () {
         //     @Override
         //     public int compare(ArrayList<Integer> a, ArrayList<Integer> b) {
