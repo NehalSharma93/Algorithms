@@ -4,7 +4,7 @@ The robot can only move either down or right at any point in time. The robot is 
 
 How many possible unique paths are there?*/
 
-//O(m*n) solution - DP
+//O(n^2) solution - DP
 class Solution {
     // int paths;
     
