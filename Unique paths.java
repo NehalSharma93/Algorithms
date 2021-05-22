@@ -4,9 +4,8 @@ The robot can only move either down or right at any point in time. The robot is 
 
 How many possible unique paths are there?*/
 
-//O(n^2) solution - DP
+//O(n^2) solution 1 - DP
 class Solution {
-    // int paths;
     
     public int uniquePaths(int m, int n) {
         int[][] paths = new int[m][n];
@@ -22,7 +21,31 @@ class Solution {
     }
 }
 
+//SOLUTION 2
+//Time Complexity: O(m * n)
+//Space Complexity: O(m * n)
+class Solution {
+    
+    public int uniquePaths(int m, int n){
+        int[][] track = new int[m+1][n+1];
+        return calculatePath(0, 0, m, n, track); 
+    }
+    
+    public int calculatePath(int i, int j, int m, int n, int[][] track){
+        if(i>=m || j>=n)
+            return 0;
+        
+        if(i==m-1 && j==n-1)
+            return 1;
+        
+        if(track[i][j]!=0)
+            return track[i][j];
+        
+        return track[i][j] = calculatePath(i+1, j, m, n, track) + calculatePath(i, j+1, m, n, track);
+    }
+}
 
+//SOLUTION 3
 //O(2^n) solution
 class Solution {
     int paths;
