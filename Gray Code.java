@@ -1,3 +1,29 @@
+//Using Bit manipulation | o(n^2)
+class Solution {
+    public List<Integer> grayCode(int a){
+	    if(a==1){
+	        List<Integer> res = new ArrayList<Integer>();
+	        res.add(0);
+	        res.add(1);
+	        return res;
+	    }
+	    
+	    List<Integer> prevRes = grayCode(a-1);
+        List<Integer> res = new ArrayList<Integer>();
+	    int len = prevRes.size();
+	    for(int i=0; i<len; i++){
+	        int n = prevRes.get(i);
+	        res.add(n<<1);
+	    }
+	    for(int i=len-1; i>=0; i--){
+	        int n = prevRes.get(i);
+	        res.add((n<<1) | 1);
+	    }
+	    
+	    return res;
+	}
+}
+
 //Not time efficient
 class Solution {
     public List<Integer> grayCode(int a) {
